@@ -27,7 +27,7 @@ $mobile-badge-font-size: 13px;
 
 $brand-info: #38AAF4 !default;
 
-.content-card-container {
+.elc-card-container {
   height: 100%;
   display: block;
   border-radius: 0.4rem;
@@ -37,7 +37,7 @@ $brand-info: #38AAF4 !default;
   color: $tropical-rain;
 }
 
-.content-card {
+.elc-card {
   min-height: 134px;
   max-height: 185px;
   padding: $mobile-sub-text-font-size;
@@ -46,50 +46,39 @@ $brand-info: #38AAF4 !default;
   }
 }
 
-.flex-item-card {
-    display: block;
-    position: relative;
-}
-
-.card-border {
+.elc-card-border {
   border-radius: 0.4rem;
   border: 0.1rem solid #DADDE2;
 }
 
-.content-card:focus {
+.elc-card:focus {
   box-shadow: 0rem 0rem 0rem 0.15rem $input-border-focus;
   border-radius: 0.6rem;
 }
 
-.content-card-mobile {
+.elc-card-mobile {
   min-height: 134px;
   max-height: 185px;
   padding: $sp-space--lg 0;
 
-  .feature-badge {
-    background : rgba(14, 120, 196, 0.2);
-    color : #333E3F;
-    font-weight: 400;
-    font-size: $mobile-badge-font-size;
-  }
   .fa {
     border: none;
   }
-  .card-badge {
+  .elc-card-badge {
     font-size: $mobile-badge-font-size;
     font-weight: 500;
   }
-  .card-icon {
+  .elc-card-icon {
     color: #333E3F;
   }
   .type-padding {
     color: #333E3F;
   }
-  .item-title{
+  .elc-item-title{
     font-size: $mobile-title-font-size;
     color: #333E3F;
   }
-  .item-description {
+  .elc-item-description {
     font-weight: 400;
     font-size: $mobile-sub-text-font-size;
     color: #637274;
@@ -100,32 +89,12 @@ $brand-info: #38AAF4 !default;
   }
 }
 
-.card-icon {
+.elc-card-icon {
   font-size: $font-size-base;
   color: $gray-base;
 }
 
-.simple-link-icon {
-  float: left;
-  font-size: $font-size--xl;
-  color: $gray-base;
-  border: 0px;
-  margin-right: 10px;
-}
-
-.simple-link-title {
-  color: $link-color;
-  font-weight: semi-bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.simple-link-title:hover {
-  color: $link-hover-color;
-  cursor: pointer;
-}
-
-.card-badge {
+.elc-card-badge {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -143,14 +112,8 @@ $brand-info: #38AAF4 !default;
   min-height: 32px;
   margin-top: -6px;
 }
-.simple-header-container {
-  display: flex;
-  align-items: center;
-  margin: 0 $sp-space--xs $sp-space--lg $sp-space--xs;
-  height: 44px;
-}
 
-.auto-margin-left {
+.elc-margin-left {
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -161,26 +124,13 @@ $brand-info: #38AAF4 !default;
   min-height: 3.2rem;
 }
 
-.feature-badge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 10px;
-  border-radius: 2px;
-  background: $state-info-bg;
-  color: $text-primary;
-  font-size: $font-size-xs;
-  width: 55px;
-  height: 20px;
-}
-
-.card-image-container {
+.elc-card-image-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.item-image {
+.elc-item-image {
   min-width: 70px;
   height: 70px;
   border-radius: 5px;
@@ -188,7 +138,7 @@ $brand-info: #38AAF4 !default;
   margin-right: 1rem;
 }
 
-.card-text-container {
+.elc-card-text-container {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
@@ -196,7 +146,7 @@ $brand-info: #38AAF4 !default;
   word-break: break-word;
 }
 
-.item-title {
+.elc-item-title {
   min-height: 20px;
   color: $text-primary;
   font-size: $font-size-base;
@@ -204,19 +154,12 @@ $brand-info: #38AAF4 !default;
   margin-bottom: $sp-space--sm;
 }
 
-.item-description {
+.elc-item-description {
   min-height: 20px;
   color: $text-tertiary;
   font-size: $font-size-xs;
   font-weight: normal;
   margin-bottom: $sp-space--sm;
-}
-
-.item-additional-info {
-  color: $text-secondary;
-  font-size: $font-size-xs;
-  font-weight: 600;
-  line-height: normal;
 }
 
 .text-ellipsis {
@@ -230,31 +173,8 @@ $brand-info: #38AAF4 !default;
   -webkit-line-clamp: 1;
 }
 
-.simple-link-badge{
-  display:flex;
-  align-items:center;
-}
-
-.simple-link-container {
-  overflow: hidden;
-  border: none;
-  box-shadow: 0px 1px 0px #D4D4D4;
-}
-
 .text-ellipsis-two-line {
   -webkit-line-clamp: 2;
-}
-
-.favorite-button {
-    border: none;
-    height: 3.2rem;
-    width: 3.2rem;
-    padding: 0;
-}
-
-
-.favorite:hover {
-    box-shadow: 0rem 0rem 0rem .15rem #3c59e7;
 }
 
 /* IE specific Class to override */
@@ -263,10 +183,10 @@ $brand-info: #38AAF4 !default;
     .text-ellipsis{
       white-space: nowrap;
     }
-    .image .card-text-container .text-ellipsis{
+    .image .elc-card-text-container .text-ellipsis{
       width: 234px;
     }
-    .card-text-container .text-ellipsis{
+    .elc-card-text-container .text-ellipsis{
       width: 320px;
     }
 }</css>
@@ -366,39 +286,39 @@ $brand-info: #38AAF4 !default;
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-07 21:47:20</sys_created_on>
         <sys_id>d81cc5d507071110179cfa4d7c1ed09c</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>ELC Topic Card</sys_name>
         <sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic">7706285107831110179cfa4d7c1ed05a</sys_package>
         <sys_policy/>
         <sys_scope display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</sys_scope>
         <sys_update_name>sp_widget_d81cc5d507071110179cfa4d7c1ed09c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-07 22:02:55</sys_updated_on>
-        <template><![CDATA[<div class="flex-item-card card-border" id="card-list-widget-body"> 
-  <a class="content-card-container" ng-class={{ data.isMobileApp ? 'content-card-mobile': 'content-card'}} ng-href={{data.href}}>
-    <div class="content-card-body">
-      <div class="flexbox header-container" ng-if="options.show_badge">
-        <div class="card-badge">
-          <i class="fa fa-pencil-square-o fa card-icon" aria-hidden="true"></i>
+        <sys_updated_on>2022-11-07 23:38:38</sys_updated_on>
+        <template><![CDATA[<div class="elc-card-border"> 
+  <a class="elc-card-container" ng-class={{ data.isMobileApp ? 'elc-card-mobile': 'elc-card'}} ng-href={{data.href}}>
+    <div class="elc-card-body">
+      <div class="flexbox header-container" ng-if="data.show_badge">
+        <div class="elc-card-badge">
+          <i class="fa fa-pencil-square-o fa elc-card-icon" aria-hidden="true"></i>
           <span class="type-padding">Request</span>
         </div>
       </div>
       <div>
-        <div class="card-text-container">
-          <div class="item-title text-ellipsis text-ellipsis-two-line">
+        <div class="elc-card-text-container">
+          <div class="elc-item-title text-ellipsis text-ellipsis-two-line">
             <span>{{data.title}}</span>
           </div>
-          <div class="card-image-container">
-            <img class="item-image" aria-hidden="true" src={{::data.image_uri}} />
-            <div class="item-description text-ellipsis text-ellipsis-four-line">
-              <span>{{data.short_description}}</span>
+          <div class="elc-card-image-container">
+            <img class="elc-item-image" aria-hidden="true" src={{::data.image_uri}} />
+            <div class="elc-item-description text-ellipsis text-ellipsis-four-line">
+              <span>{{data.description}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </a>
-  <div class="auto-margin-left">
+  <div class="elc-margin-left">
     <div ng-class="{'mesp-favorite': data.isMobileApp}" class="favorite-widget-container">
       <sp-widget widget="data.favoriteWidget"></sp-widget>
     </div>

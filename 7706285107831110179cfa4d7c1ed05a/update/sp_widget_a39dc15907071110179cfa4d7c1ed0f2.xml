@@ -3,7 +3,18 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>
+$elc-browser-gap: 10px;
+
+.elc-browser-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: $elc-browser-gap;
+}
+
+.elc-browser-item {
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data>{
 	"options": {
@@ -49,15 +60,19 @@
 	// query the topic browser items
 	var itemsGR = new GlideRecord("x_932308_elc_topic_browser_item");
 	itemsGR.addQuery("topic_browser", browser_id);
+	itemsGR.orderBy("order");
 	itemsGR.query();
 
 	data.topics = [];
-	data.widgetData = [];
+	data.widgetsData = [];
 	while (itemsGR.next()) {
-		var topic_id = itemsGR.getValue("topic");
-		data.topics.push(topic_id);
-		data.widgetData.push(
-			$sp.getWidget("x_932308_elc_topic_card", {"topic": topic_id})
+		var topic = itemsGR.getValue("topic");
+		data.topics.push(topic);
+		data.widgetsData.push(
+			$sp.getWidget("x_932308_elc_topic_card", {
+				show_badge: false,
+				topic: topic
+			})
 		);
 	}
 })();]]></script>
@@ -66,24 +81,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-11-07 21:54:06</sys_created_on>
         <sys_id>a39dc15907071110179cfa4d7c1ed0f2</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>ELC Topic Browser</sys_name>
         <sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic">7706285107831110179cfa4d7c1ed05a</sys_package>
         <sys_policy/>
         <sys_scope display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</sys_scope>
         <sys_update_name>sp_widget_a39dc15907071110179cfa4d7c1ed0f2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-07 22:40:12</sys_updated_on>
+        <sys_updated_on>2022-11-07 23:28:24</sys_updated_on>
         <template><![CDATA[<div>
 	<div class="panel-header">
     <div class="panel-heading">
     	<h3 class="panel-title">{{data.title}}</h3>
     </div>
   </div>
-  <div class="panel-body">
-    <span ng-if="data.topic_ids.length == 0">{{data.empty_message}}</span>
-    <div ng-if="data.topic_ids.length > 0">
-      <sp-widget widget="data.widgetData"></sp-widget>
+  <div class="panel-body elc-browser-container">
+    <span ng-if="data.widgetsData.length == 0">{{data.empty_message}}</span>
+    <div class="elc-browser-item" ng-repeat="widgetData in data.widgetsData">
+      <sp-widget widget="widgetData"></sp-widget>        
     </div>
   </div>
 </div>]]></template>
