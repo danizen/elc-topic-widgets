@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Topic Browser Item" max_length="40" name="x_932308_elc_topic_browser_item" type="collection">
+        <element attributes="encode_utf8=false" label="Topic" mandatory="true" max_length="32" name="topic" reference="topic" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
+        <element label="Topic Browser" mandatory="true" max_length="32" name="topic_browser" reference="x_932308_elc_topic_browser" type="reference"/>
+        <index name="index">
+            <element name="topic_browser"/>
+        </index>
+        <index name="index2">
+            <element name="topic"/>
+        </index>
+    </element>
+</database>
