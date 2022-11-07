@@ -4,13 +4,13 @@
             <element>topic_browser</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-07 19:12:35</sys_created_on>
-            <sys_id>59a8641d07831110179cfa4d7c1ed014</sys_id>
+            <sys_created_on>2022-11-07 19:50:10</sys_created_on>
+            <sys_id>4041f0d107c31110179cfa4d7c1ed0f5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_932308_elc_topic_browser_item" sys_domain="global" view="Default view">c698a01d07831110179cfa4d7c1ed09d</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-07 19:12:35</sys_updated_on>
+            <sys_updated_on>2022-11-07 19:50:10</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,15 +18,43 @@
             <element>topic</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-07 19:12:35</sys_created_on>
-            <sys_id>dda8641d07831110179cfa4d7c1ed014</sys_id>
+            <sys_created_on>2022-11-07 19:50:10</sys_created_on>
+            <sys_id>c441f0d107c31110179cfa4d7c1ed0f5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_932308_elc_topic_browser_item" sys_domain="global" view="Default view">c698a01d07831110179cfa4d7c1ed09d</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-07 19:12:35</sys_updated_on>
+            <sys_updated_on>2022-11-07 19:50:10</sys_updated_on>
             <sys_user/>
             <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>order</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-07 19:50:10</sys_created_on>
+            <sys_id>4c41f0d107c31110179cfa4d7c1ed0f5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_932308_elc_topic_browser_item" sys_domain="global" view="Default view">c698a01d07831110179cfa4d7c1ed09d</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-07 19:50:10</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-07 19:50:10</sys_created_on>
+            <sys_id>c041f0d107c31110179cfa4d7c1ed0f6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_932308_elc_topic_browser_item" sys_domain="global" view="Default view">c698a01d07831110179cfa4d7c1ed09d</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-07 19:50:10</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
