@@ -4,13 +4,13 @@
             <element>name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-07 19:12:50</sys_created_on>
-            <sys_id>1db8a41d07831110179cfa4d7c1ed01f</sys_id>
+            <sys_created_on>2022-11-07 19:49:57</sys_created_on>
+            <sys_id>3031b0d107c31110179cfa4d7c1ed0f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_932308_elc_topic_browser" sys_domain="global" view="Default view">8ef7649907831110179cfa4d7c1ed0be</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-07 19:12:50</sys_updated_on>
+            <sys_updated_on>2022-11-07 19:49:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,15 +18,29 @@
             <element>distplay_label</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-07 19:12:50</sys_created_on>
-            <sys_id>91b8a41d07831110179cfa4d7c1ed020</sys_id>
+            <sys_created_on>2022-11-07 19:49:57</sys_created_on>
+            <sys_id>b431b0d107c31110179cfa4d7c1ed0f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_932308_elc_topic_browser" sys_domain="global" view="Default view">8ef7649907831110179cfa4d7c1ed0be</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-07 19:12:50</sys_updated_on>
+            <sys_updated_on>2022-11-07 19:49:57</sys_updated_on>
             <sys_user/>
             <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-11-07 19:49:57</sys_created_on>
+            <sys_id>3c31b0d107c31110179cfa4d7c1ed0f1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_932308_elc_topic_browser" sys_domain="global" view="Default view">8ef7649907831110179cfa4d7c1ed0be</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-11-07 19:49:57</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
