@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="distplay_label" label="Distplay Label" language="en" table="x_932308_elc_topic_browser">
+    <sys_documentation element="display_label" label="Display Label" language="en" table="x_932308_elc_topic_browser">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element>distplay_label</element>
+            <element>display_label</element>
             <help/>
             <hint/>
-            <label>Distplay Label</label>
+            <label>Display Label</label>
             <language>en</language>
             <name>x_932308_elc_topic_browser</name>
-            <plural>Distplay Labels</plural>
+            <plural>Display Labels</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-11-07 19:08:13</sys_created_on>
-            <sys_id>ada724d907831110179cfa4d7c1ed0c3</sys_id>
+            <sys_created_on>2022-11-07 22:20:33</sys_created_on>
+            <sys_id>f2a3119d07071110179cfa4d7c1ed022</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>Distplay Label</sys_name>
+            <sys_name>Display Label</sys_name>
             <sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic">7706285107831110179cfa4d7c1ed05a</sys_package>
             <sys_policy/>
             <sys_scope display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</sys_scope>
-            <sys_update_name>sys_documentation_x_932308_elc_topic_browser_distplay_label_en</sys_update_name>
+            <sys_update_name>sys_documentation_x_932308_elc_topic_browser_display_label_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-11-07 19:08:13</sys_updated_on>
+            <sys_updated_on>2022-11-07 22:20:33</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

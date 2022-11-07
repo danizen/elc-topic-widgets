@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data>{
+	"options": {
+		"browser_id": "247be89d07831110179cfa4d7c1ed02f"
+	}
+}</demo_data>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>x_932308_elc_topic_browser</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>ELC Topic Browser</name>
+        <option_schema>[{"displayValue":"Topic Browser","hint":"Select the list of topics to show in the browser","name":"browser_id","section":"Data","label":"Topic Browser","type":"reference","value":"x_932308_elc_topic_browser","ed":{"reference":"x_932308_elc_topic_browser"}}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	// defaults
+	var browser_id = options.browser_id;
+	data.title = "Error";
+	data.empty_message = "No topic browser items found";
+
+	// validate that browser is provided
+	if (browser_id === undefined) {
+		gs.info("esc_topic_browser; Topic browser option undefined");
+		return;
+	}
+	
+	// query the topic browser
+	var browserGR = new GlideRecord("x_932308_elc_topic_browser");
+	browserGR.addQuery("sys_id", browser_id);
+	browserGR.setLimit(1);
+	browserGR.query();
+	
+	if (!browserGR.next()) {
+		gs.info("esc_topic_browser: Topic browser not found");
+		return;
+	}
+	
+	data.title = browserGR.getValue("display_label");
+	
+	// query the topic browser items
+	var itemsGR = new GlideRecord("x_932308_elc_topic_browser_item");
+	itemsGR.addQuery("topic_browser", browser_id);
+	itemsGR.query();
+
+	data.topics = [];
+	data.widgetData = [];
+	while (itemsGR.next()) {
+		var topic_id = itemsGR.getValue("topic");
+		data.topics.push(topic_id);
+		data.widgetData.push(
+			$sp.getWidget("x_932308_elc_topic_card", {"topic": topic_id})
+		);
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-07 21:54:06</sys_created_on>
+        <sys_id>a39dc15907071110179cfa4d7c1ed0f2</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>ELC Topic Browser</sys_name>
+        <sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic">7706285107831110179cfa4d7c1ed05a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</sys_scope>
+        <sys_update_name>sp_widget_a39dc15907071110179cfa4d7c1ed0f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-07 22:40:12</sys_updated_on>
+        <template><![CDATA[<div>
+	<div class="panel-header">
+    <div class="panel-heading">
+    	<h3 class="panel-title">{{data.title}}</h3>
+    </div>
+  </div>
+  <div class="panel-body">
+    <span ng-if="data.topic_ids.length == 0">{{data.empty_message}}</span>
+    <div ng-if="data.topic_ids.length > 0">
+      <sp-widget widget="data.widgetData"></sp-widget>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

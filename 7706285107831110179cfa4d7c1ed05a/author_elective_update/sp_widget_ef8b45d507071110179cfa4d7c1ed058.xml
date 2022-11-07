@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	if (c.data.category !== undefined && c.data.topic_id !== undefined) {
+		c.data.href = "/esc?id="+ c.data.category +"&topic_id="+ c.data.topic_id;
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>$sp-space--lg : 16px !default;
+$sp-space--md : 12px !default;
+$sp-space--sm : 8px !default;
+$sp-space--xs : 4px !default;
+
+$font-size-base : 16px !default;
+$font-size-xl : 24px !default;
+$font-size-xs : 12px !default;
+
+$text-primary : #181A1F !default;
+$text-secondary: #474D5A !default;
+$text-tertiary: #656E81 !default;
+$mobile-title-font-size : 16px;
+$mobile-sub-text-font-size : 14px;
+$mobile-badge-font-size: 13px;
+
+$brand-info: #38AAF4 !default;
+
+.content-card-container {
+  height: 100%;
+  display: block;
+  border-radius: 0.4rem;
+}
+
+.mesp-favorite .fa {
+  color: $tropical-rain;
+}
+
+.content-card {
+  min-height: 134px;
+  max-height: 185px;
+  padding: $mobile-sub-text-font-size;
+  .fa { 
+    border: none;
+  }
+}
+
+.flex-item-card {
+    display: block;
+    position: relative;
+}
+
+.card-border {
+  border-radius: 0.4rem;
+  border: 0.1rem solid #DADDE2;
+}
+
+.content-card:focus {
+  box-shadow: 0rem 0rem 0rem 0.15rem $input-border-focus;
+  border-radius: 0.6rem;
+}
+
+.content-card-mobile {
+  min-height: 134px;
+  max-height: 185px;
+  padding: $sp-space--lg 0;
+
+  .feature-badge {
+    background : rgba(14, 120, 196, 0.2);
+    color : #333E3F;
+    font-weight: 400;
+    font-size: $mobile-badge-font-size;
+  }
+  .fa {
+    border: none;
+  }
+  .card-badge {
+    font-size: $mobile-badge-font-size;
+    font-weight: 500;
+  }
+  .card-icon {
+    color: #333E3F;
+  }
+  .type-padding {
+    color: #333E3F;
+  }
+  .item-title{
+    font-size: $mobile-title-font-size;
+    color: #333E3F;
+  }
+  .item-description {
+    font-weight: 400;
+    font-size: $mobile-sub-text-font-size;
+    color: #637274;
+  }
+  .item-additional-info {
+    font-weight: 500;
+    font-size: $mobile-sub-text-font-size;
+  }
+}
+
+.card-icon {
+  font-size: $font-size-base;
+  color: $gray-base;
+}
+
+.simple-link-icon {
+  float: left;
+  font-size: $font-size--xl;
+  color: $gray-base;
+  border: 0px;
+  margin-right: 10px;
+}
+
+.simple-link-title {
+  color: $link-color;
+  font-weight: semi-bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.simple-link-title:hover {
+  color: $link-hover-color;
+  cursor: pointer;
+}
+
+.card-badge {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: $font-size-xs;
+  color: $color-black-dark;
+}
+
+.type-padding {
+  padding-left: 0.4rem;
+  color: $text-color;
+}
+
+.header-container {
+  margin-bottom: $sp-space--sm;
+  min-height: 32px;
+  margin-top: -6px;
+}
+.simple-header-container {
+  display: flex;
+  align-items: center;
+  margin: 0 $sp-space--xs $sp-space--lg $sp-space--xs;
+  height: 44px;
+}
+
+.auto-margin-left {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: $sp-space--xs;
+  position: absolute;
+  top: 0.8rem;
+  right: 0.6rem;
+  min-height: 3.2rem;
+}
+
+.feature-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 2px;
+  background: $state-info-bg;
+  color: $text-primary;
+  font-size: $font-size-xs;
+  width: 55px;
+  height: 20px;
+}
+
+.card-image-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item-image {
+  min-width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  align-self: flex-start;
+  margin-right: 1rem;
+}
+
+.card-text-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  word-break: break-word;
+}
+
+.item-title {
+  min-height: 20px;
+  color: $text-primary;
+  font-size: $font-size-base;
+  font-weight: 600;
+  margin-bottom: $sp-space--sm;
+}
+
+.item-description {
+  min-height: 20px;
+  color: $text-tertiary;
+  font-size: $font-size-xs;
+  font-weight: normal;
+  margin-bottom: $sp-space--sm;
+}
+
+.item-additional-info {
+  color: $text-secondary;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.text-ellipsis-one-line {
+  -webkit-line-clamp: 1;
+}
+
+.simple-link-badge{
+  display:flex;
+  align-items:center;
+}
+
+.simple-link-container {
+  overflow: hidden;
+  border: none;
+  box-shadow: 0px 1px 0px #D4D4D4;
+}
+
+.text-ellipsis-two-line {
+  -webkit-line-clamp: 2;
+}
+
+.favorite-button {
+    border: none;
+    height: 3.2rem;
+    width: 3.2rem;
+    padding: 0;
+}
+
+
+.favorite:hover {
+    box-shadow: 0rem 0rem 0rem .15rem #3c59e7;
+}
+
+/* IE specific Class to override */
+@media screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none) {
+    .text-ellipsis{
+      white-space: nowrap;
+    }
+    .image .card-text-container .text-ellipsis{
+      width: 234px;
+    }
+    .card-text-container .text-ellipsis{
+      width: 320px;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data>{
+	"options": {
+	  "topic": "d1a2b2e3073a1110179cfa4d7c1ed0c4"
+	}
+}</demo_data>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>esc_topic_card</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>ESC Topic Card</name>
+        <option_schema>[{"hint":"CSS Class Names to be applied to the topic card","name":"class_names","section":"Presentation","label":"Class Names","type":"string"},{"hint":"Override the title to be displayed in the card","name":"title","section":"Presentation","label":"Title","type":"string"},{"hint":"Override the short description displayed in the card","name":"short_description","section":"Presentation","label":"Short description","type":"string"},{"displayValue":"Images","hint":"Override the image displayed in the topic card","name":"image","section":"Presentation","label":"Image","type":"reference","value":"db_image","ed":{"reference":"db_image"}},{"displayValue":"Topic","hint":"Any topic, active or otherwise, from any taxonomy in topic table.","name":"topic","section":"Data","label":"Choose Topic","type":"reference","value":"topic","ed":{"reference":"topic"}},{"hint":"Set to true to show the pencil icon and browse label","name":"show_request","section":"Behavior","default_value":"false","label":"Show request","type":"boolean"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	// defaults
+	var topic_id = options.topic;
+	data.category = undefined;
+	data.title = "Error";
+	data.short_description = "Topic not found or inactive";
+	data.error_class = "topic-error";
+	data.image_uri = undefined;
+
+	// validate that topic is provided
+	if (topic_id === undefined) {
+		gs.log("esc_it_topic_card; topic option undefined");
+		return;
+	}
+
+	// query the topic record
+	var topicGR = new GlideRecord("topic");
+	topicGR.addQuery("sys_id", topic_id);
+	topicGR.setLimit(1);
+	topicGR.query();
+
+	if (!topicGR.next()) {
+		gs.log("esc_it_topic_card; error retrieving topic "+topic_id);
+		return;
+	}
+	var active = topicGR.getValue('active');
+	var name = topicGR.getValue('name');
+	var icon = topicGR.getValue('icon');
+
+	// verify the topic is active
+	if (!active) {
+		gs.log("esc_it_topic_card: topic "+ name +"("+ topic_id +") is not active");
+		return;
+	}
+
+	// build topic response 
+	data.topic_id = data.sys_id = topic_id;
+	data.category = "emp_taxonomy_topic";
+	data.table = "topic";
+	data.title = name;
+	data.short_description = topicGR.getValue('description');
+	if (icon !== undefined) {
+		data.image_uri = icon +'.iix';
+	}
+	
+	// build favorite data
+	data.isMobileApp = $sp.getParameter('view') === 'mobile';
+	data.favoriteWidget = $sp.getWidget('ec_favorite', {
+		'table': 'topic',
+		'sys_id': topic_id
+	});																		
+
+	// override options
+	if (options.title) {
+		data.title = options.title;
+	}
+	if (options.short_description) {
+		data.short_description = options.short_description;
+	}
+	if (options.image) {
+		// image override is a reference - retrieve the name, which is the path.
+		var imageGR = new GlideRecord('db_image');
+		imageGR.addQuery('sys_id', options.image);
+		imageGR.setLimit(1);
+		imageGR.query();
+		
+		if (!imageGR.next()) {
+			gs.log("esc_it_topic_card; override image (sysId "+ options.image +") not found");
+		} else {
+			data.image_uri = imageGR.getValue('name');
+		}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-07 21:45:05</sys_created_on>
+        <sys_id>ef8b45d507071110179cfa4d7c1ed058</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESC Topic Card</sys_name>
+        <sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic">7706285107831110179cfa4d7c1ed05a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</sys_scope>
+        <sys_update_name>sp_widget_ef8b45d507071110179cfa4d7c1ed058</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-07 21:45:05</sys_updated_on>
+        <template><![CDATA[<div class="flex-item-card card-border" id="card-list-widget-body"> 
+  <a class="content-card-container" ng-class={{ data.isMobileApp ? 'content-card-mobile': 'content-card'}} ng-href={{data.href}}>
+    <div class="content-card-body">
+      <div class="flexbox header-container" ng-if={{options.show_requests}}>
+        <div class="card-badge">
+          <i class="fa fa-pencil-square-o fa card-icon" aria-hidden="true"></i>
+          <span class="type-padding">Request</span>
+        </div>
+      </div>
+      <div>
+        <div class="card-text-container">
+          <div class="item-title text-ellipsis text-ellipsis-two-line">
+            <span>{{data.title}}</span>
+          </div>
+          <div class="card-image-container">
+            <img class="item-image" aria-hidden="true" src={{::data.image_uri}} />
+            <div class="item-description text-ellipsis text-ellipsis-four-line">
+              <span>{{data.short_description}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  <div class="auto-margin-left">
+    <div ng-class="{'mesp-favorite': data.isMobileApp}" class="favorite-widget-container">
+      <sp-widget widget="data.favoriteWidget"></sp-widget>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</application>
+        <file_path/>
+        <instance_id>5b695d1bdba2d7006578f22ebf96190e</instance_id>
+        <instance_name>dev60995</instance_name>
+        <name>sp_widget_ef8b45d507071110179cfa4d7c1ed058</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	if (c.data.category !== undefined &amp;&amp; c.data.topic_id !== undefined) {
+		c.data.href = "/esc?id="+ c.data.category +"&amp;topic_id="+ c.data.topic_id;
+	}
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;$sp-space--lg : 16px !default;
+$sp-space--md : 12px !default;
+$sp-space--sm : 8px !default;
+$sp-space--xs : 4px !default;
+
+$font-size-base : 16px !default;
+$font-size-xl : 24px !default;
+$font-size-xs : 12px !default;
+
+$text-primary : #181A1F !default;
+$text-secondary: #474D5A !default;
+$text-tertiary: #656E81 !default;
+$mobile-title-font-size : 16px;
+$mobile-sub-text-font-size : 14px;
+$mobile-badge-font-size: 13px;
+
+$brand-info: #38AAF4 !default;
+
+.content-card-container {
+  height: 100%;
+  display: block;
+  border-radius: 0.4rem;
+}
+
+.mesp-favorite .fa {
+  color: $tropical-rain;
+}
+
+.content-card {
+  min-height: 134px;
+  max-height: 185px;
+  padding: $mobile-sub-text-font-size;
+  .fa { 
+    border: none;
+  }
+}
+
+.flex-item-card {
+    display: block;
+    position: relative;
+}
+
+.card-border {
+  border-radius: 0.4rem;
+  border: 0.1rem solid #DADDE2;
+}
+
+.content-card:focus {
+  box-shadow: 0rem 0rem 0rem 0.15rem $input-border-focus;
+  border-radius: 0.6rem;
+}
+
+.content-card-mobile {
+  min-height: 134px;
+  max-height: 185px;
+  padding: $sp-space--lg 0;
+
+  .feature-badge {
+    background : rgba(14, 120, 196, 0.2);
+    color : #333E3F;
+    font-weight: 400;
+    font-size: $mobile-badge-font-size;
+  }
+  .fa {
+    border: none;
+  }
+  .card-badge {
+    font-size: $mobile-badge-font-size;
+    font-weight: 500;
+  }
+  .card-icon {
+    color: #333E3F;
+  }
+  .type-padding {
+    color: #333E3F;
+  }
+  .item-title{
+    font-size: $mobile-title-font-size;
+    color: #333E3F;
+  }
+  .item-description {
+    font-weight: 400;
+    font-size: $mobile-sub-text-font-size;
+    color: #637274;
+  }
+  .item-additional-info {
+    font-weight: 500;
+    font-size: $mobile-sub-text-font-size;
+  }
+}
+
+.card-icon {
+  font-size: $font-size-base;
+  color: $gray-base;
+}
+
+.simple-link-icon {
+  float: left;
+  font-size: $font-size--xl;
+  color: $gray-base;
+  border: 0px;
+  margin-right: 10px;
+}
+
+.simple-link-title {
+  color: $link-color;
+  font-weight: semi-bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.simple-link-title:hover {
+  color: $link-hover-color;
+  cursor: pointer;
+}
+
+.card-badge {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: $font-size-xs;
+  color: $color-black-dark;
+}
+
+.type-padding {
+  padding-left: 0.4rem;
+  color: $text-color;
+}
+
+.header-container {
+  margin-bottom: $sp-space--sm;
+  min-height: 32px;
+  margin-top: -6px;
+}
+.simple-header-container {
+  display: flex;
+  align-items: center;
+  margin: 0 $sp-space--xs $sp-space--lg $sp-space--xs;
+  height: 44px;
+}
+
+.auto-margin-left {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: $sp-space--xs;
+  position: absolute;
+  top: 0.8rem;
+  right: 0.6rem;
+  min-height: 3.2rem;
+}
+
+.feature-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 2px;
+  background: $state-info-bg;
+  color: $text-primary;
+  font-size: $font-size-xs;
+  width: 55px;
+  height: 20px;
+}
+
+.card-image-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item-image {
+  min-width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  align-self: flex-start;
+  margin-right: 1rem;
+}
+
+.card-text-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  word-break: break-word;
+}
+
+.item-title {
+  min-height: 20px;
+  color: $text-primary;
+  font-size: $font-size-base;
+  font-weight: 600;
+  margin-bottom: $sp-space--sm;
+}
+
+.item-description {
+  min-height: 20px;
+  color: $text-tertiary;
+  font-size: $font-size-xs;
+  font-weight: normal;
+  margin-bottom: $sp-space--sm;
+}
+
+.item-additional-info {
+  color: $text-secondary;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.text-ellipsis-one-line {
+  -webkit-line-clamp: 1;
+}
+
+.simple-link-badge{
+  display:flex;
+  align-items:center;
+}
+
+.simple-link-container {
+  overflow: hidden;
+  border: none;
+  box-shadow: 0px 1px 0px #D4D4D4;
+}
+
+.text-ellipsis-two-line {
+  -webkit-line-clamp: 2;
+}
+
+.favorite-button {
+    border: none;
+    height: 3.2rem;
+    width: 3.2rem;
+    padding: 0;
+}
+
+
+.favorite:hover {
+    box-shadow: 0rem 0rem 0rem .15rem #3c59e7;
+}
+
+/* IE specific Class to override */
+@media screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none) {
+    .text-ellipsis{
+      white-space: nowrap;
+    }
+    .image .card-text-container .text-ellipsis{
+      width: 234px;
+    }
+    .card-text-container .text-ellipsis{
+      width: 320px;
+    }
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data&gt;{
+	"options": {
+	  "topic": "d1a2b2e3073a1110179cfa4d7c1ed0c4"
+	}
+}&lt;/demo_data&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;esc_topic_card&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;ESC Topic Card&lt;/name&gt;&lt;option_schema&gt;[{"hint":"CSS Class Names to be applied to the topic card","name":"class_names","section":"Presentation","label":"Class Names","type":"string"},{"hint":"Override the title to be displayed in the card","name":"title","section":"Presentation","label":"Title","type":"string"},{"hint":"Override the short description displayed in the card","name":"short_description","section":"Presentation","label":"Short description","type":"string"},{"displayValue":"Images","hint":"Override the image displayed in the topic card","name":"image","section":"Presentation","label":"Image","type":"reference","value":"db_image","ed":{"reference":"db_image"}},{"displayValue":"Topic","hint":"Any topic, active or otherwise, from any taxonomy in topic table.","name":"topic","section":"Data","label":"Choose Topic","type":"reference","value":"topic","ed":{"reference":"topic"}},{"hint":"Set to true to show the pencil icon and browse label","name":"show_request","section":"Behavior","default_value":"false","label":"Show request","type":"boolean"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	// defaults
+	var topic_id = options.topic;
+	data.category = undefined;
+	data.title = "Error";
+	data.short_description = "Topic not found or inactive";
+	data.error_class = "topic-error";
+	data.image_uri = undefined;
+
+	// validate that topic is provided
+	if (topic_id === undefined) {
+		gs.log("esc_it_topic_card; topic option undefined");
+		return;
+	}
+
+	// query the topic record
+	var topicGR = new GlideRecord("topic");
+	topicGR.addQuery("sys_id", topic_id);
+	topicGR.setLimit(1);
+	topicGR.query();
+
+	if (!topicGR.next()) {
+		gs.log("esc_it_topic_card; error retrieving topic "+topic_id);
+		return;
+	}
+	var active = topicGR.getValue('active');
+	var name = topicGR.getValue('name');
+	var icon = topicGR.getValue('icon');
+
+	// verify the topic is active
+	if (!active) {
+		gs.log("esc_it_topic_card: topic "+ name +"("+ topic_id +") is not active");
+		return;
+	}
+
+	// build topic response 
+	data.topic_id = data.sys_id = topic_id;
+	data.category = "emp_taxonomy_topic";
+	data.table = "topic";
+	data.title = name;
+	data.short_description = topicGR.getValue('description');
+	if (icon !== undefined) {
+		data.image_uri = icon +'.iix';
+	}
+	
+	// build favorite data
+	data.isMobileApp = $sp.getParameter('view') === 'mobile';
+	data.favoriteWidget = $sp.getWidget('ec_favorite', {
+		'table': 'topic',
+		'sys_id': topic_id
+	});																		
+
+	// override options
+	if (options.title) {
+		data.title = options.title;
+	}
+	if (options.short_description) {
+		data.short_description = options.short_description;
+	}
+	if (options.image) {
+		// image override is a reference - retrieve the name, which is the path.
+		var imageGR = new GlideRecord('db_image');
+		imageGR.addQuery('sys_id', options.image);
+		imageGR.setLimit(1);
+		imageGR.query();
+		
+		if (!imageGR.next()) {
+			gs.log("esc_it_topic_card; override image (sysId "+ options.image +") not found");
+		} else {
+			data.image_uri = imageGR.getValue('name');
+		}
+	}
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-11-07 21:45:05&lt;/sys_created_on&gt;&lt;sys_id&gt;ef8b45d507071110179cfa4d7c1ed058&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;ESC Topic Card&lt;/sys_name&gt;&lt;sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic"&gt;7706285107831110179cfa4d7c1ed05a&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="ELC Topic Browser"&gt;7706285107831110179cfa4d7c1ed05a&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_ef8b45d507071110179cfa4d7c1ed058&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-11-07 21:45:05&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="flex-item-card card-border" id="card-list-widget-body"&gt; 
+  &lt;a class="content-card-container" ng-class={{ data.isMobileApp ? 'content-card-mobile': 'content-card'}} ng-href={{data.href}}&gt;
+    &lt;div class="content-card-body"&gt;
+      &lt;div class="flexbox header-container" ng-if={{options.show_requests}}&gt;
+        &lt;div class="card-badge"&gt;
+          &lt;i class="fa fa-pencil-square-o fa card-icon" aria-hidden="true"&gt;&lt;/i&gt;
+          &lt;span class="type-padding"&gt;Request&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;div class="card-text-container"&gt;
+          &lt;div class="item-title text-ellipsis text-ellipsis-two-line"&gt;
+            &lt;span&gt;{{data.title}}&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="card-image-container"&gt;
+            &lt;img class="item-image" aria-hidden="true" src={{::data.image_uri}} /&gt;
+            &lt;div class="item-description text-ellipsis text-ellipsis-four-line"&gt;
+              &lt;span&gt;{{data.short_description}}&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+  &lt;div class="auto-margin-left"&gt;
+    &lt;div ng-class="{'mesp-favorite': data.isMobileApp}" class="favorite-widget-container"&gt;
+      &lt;sp-widget widget="data.favoriteWidget"&gt;&lt;/sp-widget&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-150688982</payload_hash>
+        <record_name>ESC Topic Card</record_name>
+        <reverted_from/>
+        <source>4f29641d07831110179cfa4d7c1ed0bc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-07 21:45:06</sys_created_on>
+        <sys_id>ef8b45d507071110179cfa4d7c1ed05a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>184540ddef20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-07 21:45:06</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>2b8b45d5f7071110aa403d5681b8e35a</update_guid>
+        <update_guid_history>2b8b45d5f7071110aa403d5681b8e35a:-150688982</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ESC Topic Card">8dcb49d507071110179cfa4d7c1ed029</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-11-07 21:46:01</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>7c2bbcfafba142488c1972c318cb31a9</sys_id>
+        <sys_metadata>ef8b45d507071110179cfa4d7c1ed058</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESC Topic Card</sys_name>
+        <sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic">7706285107831110179cfa4d7c1ed05a</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</sys_scope>
+        <sys_scope_delete display_value="">0fd1aa479d5c425a83abf8e29666c804</sys_scope_delete>
+        <sys_update_name>sp_widget_ef8b45d507071110179cfa4d7c1ed058</sys_update_name>
+        <sys_update_version display_value="sp_widget_ef8b45d507071110179cfa4d7c1ed058">ef8b45d507071110179cfa4d7c1ed05a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-11-07 21:46:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="distplay_label" table="x_932308_elc_topic_browser">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="display_label" table="x_932308_elc_topic_browser">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
@@ -14,7 +14,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Distplay Label</column_label>
+        <column_label>Display Label</column_label>
         <comments/>
         <create_roles/>
         <default_value>Browse</default_value>
@@ -27,7 +27,7 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>distplay_label</element>
+        <element>display_label</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <function_definition/>
@@ -52,16 +52,16 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2022-11-07 19:08:13</sys_created_on>
-        <sys_id>ab87e0d907831110179cfa4d7c1ed052</sys_id>
+        <sys_created_on>2022-11-07 22:20:32</sys_created_on>
+        <sys_id>f493915d07071110179cfa4d7c1ed0eb</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Distplay Label</sys_name>
+        <sys_name>Display Label</sys_name>
         <sys_package display_value="ELC Topic Browser" source="x_932308_elc_topic">7706285107831110179cfa4d7c1ed05a</sys_package>
         <sys_policy/>
         <sys_scope display_value="ELC Topic Browser">7706285107831110179cfa4d7c1ed05a</sys_scope>
-        <sys_update_name>sys_dictionary_x_932308_elc_topic_browser_distplay_label</sys_update_name>
+        <sys_update_name>sys_dictionary_x_932308_elc_topic_browser_display_label</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-11-07 19:08:13</sys_updated_on>
+        <sys_updated_on>2022-11-07 22:20:32</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
