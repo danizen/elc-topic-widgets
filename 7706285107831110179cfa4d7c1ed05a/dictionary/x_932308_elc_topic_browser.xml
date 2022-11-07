@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Topic Browser" max_length="40" name="x_932308_elc_topic_browser" type="collection">
+        <element default="Browse" label="Distplay Label" mandatory="true" max_length="50" name="distplay_label" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+    </element>
+</database>
